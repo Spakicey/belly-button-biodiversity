@@ -14,8 +14,12 @@ Roza would like the partially finshed dashboard completed. Three charts displayi
 
 The GitHub page doesn't seem to work quite right as can be seen in the image below:
 
-[img_2](/static/images/img_2.png)
+![img_2](/static/images/img_2.png)
 
 Whereas running the page locally produces the following page:
 
-[img_1](/static/images/img_1.png)
+![img_1](/static/images/img_1.png)
+
+The webpage is also mobile responsive:
+
+![img_3](/static/images/img_3.png)
