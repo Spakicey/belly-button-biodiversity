@@ -59,13 +59,10 @@ function buildCharts(sample) {
   d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the samples array.
     var samplesArray = data.samples;
-    console.log(samplesArray);
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     var samplesID = samplesArray.filter(sampleObj => sampleObj.id == sample);
-    console.log(samplesID);
     //  5. Create a variable that holds the first sample in the array.
     var firstSample = samplesID[0];
-    console.log(firstSample);
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var sample_otu_ids = firstSample.otu_ids;
     var sample_otu_labels = firstSample.otu_labels;
@@ -124,18 +121,16 @@ function buildCharts(sample) {
     // Filter the data for the object with the desired sample number
     var sampleResultArray = sampleMetadata.filter(sampleObj => sampleObj.id == sample);
     var sampleResult = sampleResultArray[0];
-    console.log(sampleResult);
     // 3. Create a variable that holds the washing frequency.
     sampleWfreq = sampleResult.wfreq;
-    console.log("WASHING FREQ: ", sampleWfreq);
     // 4. Create the trace for the gauge chart.
     var gaugeTrace = {
       value: sampleWfreq,
       type: 'indicator',
       mode: 'gauge+number',
-      title: {text: "Belly Button Washing Frequency"},
+      title: {text: "Belly Button Washing Frequency<br><sup>Scrubs per Week</sup>"},
       gauge: {
-        axis: {range: [null, 10]},
+        axis: {range: [null, 10], nticks: 6},
         bar: {color: "black"},
         steps: [
           {range: [0,2], color:"red"},
